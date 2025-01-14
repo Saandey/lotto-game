@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="575.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainGameSceneController">
+<children>
+
+    <!-- Кнопка для раздачи билетов -->
+    <Button alignment="CENTER" contentDisplay="CENTER" layoutX="216.0" layoutY="319.0" onAction="#distributeTickets" text="Раздать билеты" />
+
+    <!-- Кнопка для нового числа -->
+    <Button fx:id="drawButton" layoutX="355.0" layoutY="215.0" onAction="#drawNumber" text="Вытянуть бочонок" />
+
+    <!-- Кнопка для автоматического розыгрыша -->
+    <Button fx:id="autoDrawButton" layoutX="330.0" layoutY="257.0" onAction="#autoDraw" text="Вытягивать автоматически" />
+    <HBox fx:id="hBoxPlayer1" layoutX="34.0" layoutY="380.0" spacing="10.0">
+        <children>
+          <Label fx:id="player1Label" text="Игрок 1" textFill="#421bcf">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+          <GridPane fx:id="ticketsPlayer1">
+
+          </GridPane>
+        </children>
+    </HBox>
+    <HBox fx:id="hBoxPlayer2" layoutX="34.0" layoutY="475.0" spacing="10.0">
+        <children>
+          <Label fx:id="player2Label" text="Игрок 2" textFill="#421bcf">
+               <font>
+                  <Font size="20.0" />
+               </font>
+          </Label>
+          <GridPane fx:id="ticketsPlayer2">
+          </GridPane>
+        </children>
+    </HBox>
+    <GridPane fx:id="allNumbersGridPane" layoutX="73.0" layoutY="77.0">
+
+    </GridPane>
+
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="14.0" scaleX="0.9" text="🎉 Добро пожаловать в игру Лото! 🎉" textFill="#cd0bd4" translateX="0.5">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+    </Label>
+    <Label fx:id="drawnNumberLabel" layoutX="396.0" layoutY="123.0" text="Label" textFill="#6210c7">
+         <font>
+            <Font size="25.0" />
+         </font>
+    </Label>
+    <Label fx:id="drawnNumberText" layoutX="355.0" layoutY="93.0" text="Выпавшее число:" textFill="#421bcf">
+         <font>
+            <Font size="17.0" />
+         </font>
+    </Label>
+</children>
+</AnchorPane>
