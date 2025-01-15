@@ -17,7 +17,7 @@
     <Button fx:id="drawButton" layoutX="355.0" layoutY="215.0" onAction="#drawNumber" text="Вытянуть бочонок" />
 
     <!-- Кнопка для автоматического розыгрыша -->
-    <Button fx:id="autoDrawButton" layoutX="330.0" layoutY="257.0" onAction="#autoDraw" text="Вытягивать автоматически" />
+    <Button fx:id="autoDrawButton" layoutX="330.0" layoutY="257.0" onAction="#autoDraw" text="Автоматический розыгрыш" />
     <HBox fx:id="hBoxPlayer1" layoutX="34.0" layoutY="380.0" spacing="10.0">
         <children>
           <Label fx:id="player1Label" text="Игрок 1" textFill="#421bcf">

@@ -271,12 +271,6 @@ public class MainGameSceneController {
         resetHighlighting();
         game.clearWinners();
 
-//        try {
-//            System.out.println(game.checkWinner());
-//        } catch (NullPointerException e) {
-//
-//        }
-
         isGameFinished = false;
 
         hBoxPlayer1.getChildren().remove(totalMatchesPlayer1);

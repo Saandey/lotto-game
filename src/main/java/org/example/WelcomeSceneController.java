@@ -33,7 +33,7 @@ public class WelcomeSceneController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("");
             alert.setHeaderText(null);
-            alert.setContentText("Имя должно содержать только буквы и быть длиной от 1 до 15 символов.");
+            alert.setContentText("Имя должно содержать только буквы и быть длиной от 0 до 15 символов.");
             alert.showAndWait();
             return;  // Останавливаем выполнение, если имя некорректно
         }
@@ -93,8 +93,8 @@ public class WelcomeSceneController {
     }
 
     private void validateName(TextField textField, String newValue, Label errorLabel) {
-        String namePattern = "^[A-Za-zА-Яа-я]+$";
-        if (!newValue.matches(namePattern) || newValue.length() < 1 || newValue.length() > 15) {
+        String namePattern = "^[A-Za-zА-Яа-я]*$";
+        if (!newValue.matches(namePattern) || newValue.length() > 15) {
             textField.setStyle("-fx-border-color: red;");  // Подсвечиваем ошибку
             errorLabel.setVisible(true);  // Показываем метку ошибки
             isNameValid = false;

@@ -16,18 +16,18 @@
          </font>
       </Label>
       <Label layoutX="24.0" layoutY="62.0" text="Игрок 1" />
-      <TextField fx:id="player1TextField" promptText="Введите имя (1-15 букв)" layoutX="83.0" layoutY="59.0" prefHeight="26.0" prefWidth="146.0">
+      <TextField fx:id="player1TextField" promptText="Введите имя (0-15 букв)" layoutX="83.0" layoutY="59.0" prefHeight="26.0" prefWidth="146.0">
          <tooltip>
-            <Tooltip text="Имя должно содержать только буквы и быть от 1 до 15 символов" />
+            <Tooltip text="Имя должно содержать только буквы и быть от 0 до 15 символов" />
          </tooltip>
          <padding>
             <Insets left="5.0" right="10.0" />
          </padding></TextField>
       <Label fx:id="player1ErrorLabel" layoutX="83" layoutY="84" visible="false" text="Invalid name!" textFill="red" />
       <Label layoutX="23.0" layoutY="110.0" text="Игрок 2" />
-      <TextField fx:id="player2TextField" promptText="Введите имя (1-15 букв)" layoutX="83.0" layoutY="106.0" prefHeight="26.0" prefWidth="146.0">
+      <TextField fx:id="player2TextField" promptText="Введите имя (0-15 букв)" layoutX="83.0" layoutY="106.0" prefHeight="26.0" prefWidth="146.0">
          <tooltip>
-            <Tooltip text="Имя должно содержать только буквы и быть от 1 до 15 символов" />
+            <Tooltip text="Имя должно содержать только буквы и быть от 0 до 15 символов" />
          </tooltip>
          <padding>
             <Insets left="5.0" right="10.0" />
