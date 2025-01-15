@@ -11,21 +11,32 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
 
 public class WelcomeSceneController {
 
+    private boolean isNameValid = true;  // Флаг для проверки имени
     @FXML
     private TextField player1TextField;
     @FXML
     private TextField player2TextField;
-
     @FXML
     private Label player1ErrorLabel;
-
     @FXML
     private Label player2ErrorLabel;
 
     public void startGame(ActionEvent actionEvent) throws Exception  {
+
+        // Проверка, что имя корректно
+        if (!isNameValid) {
+            // Показываем Alert с ошибкой
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText(null);
+            alert.setContentText("Имя должно содержать только буквы и быть длиной от 1 до 15 символов.");
+            alert.showAndWait();
+            return;  // Останавливаем выполнение, если имя некорректно
+        }
 
         // Загружаем вторую сцену (саму игру),передаем имена игроков
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainGameScene.fxml"));
@@ -83,12 +94,14 @@ public class WelcomeSceneController {
 
     private void validateName(TextField textField, String newValue, Label errorLabel) {
         String namePattern = "^[A-Za-zА-Яа-я]+$";
-        if (!newValue.matches(namePattern) || newValue.length() < 3 || newValue.length() > 15) {
+        if (!newValue.matches(namePattern) || newValue.length() < 1 || newValue.length() > 15) {
             textField.setStyle("-fx-border-color: red;");  // Подсвечиваем ошибку
             errorLabel.setVisible(true);  // Показываем метку ошибки
+            isNameValid = false;
         } else {
             textField.setStyle("-fx-border-color: none;");  // Убираем подсветку
             errorLabel.setVisible(false);  // Скрываем метку ошибки
+            isNameValid = true;
         }
     }
 }

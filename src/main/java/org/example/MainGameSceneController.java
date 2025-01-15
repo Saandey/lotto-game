@@ -315,13 +315,12 @@ public class MainGameSceneController {
             // Привязываем Alert к основному окну, чтобы он отображался в центре
             Stage stage = (Stage) drawButton.getScene().getWindow();
             alert.initOwner(stage);
+
             // Показываем Alert и ждем выбора пользователя
             alert.showAndWait().ifPresent(response -> {
                 if (response == newGameButton) {
-                    // Логика для перезапуска игры
                     restartGame();
                 } else if (response == exitButton) {
-                    // Логика для выхода из игры
                     System.exit(0);
                 }
             });
